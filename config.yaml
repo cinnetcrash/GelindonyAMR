@@ -1,5 +1,14 @@
+# Örneklerin bulunduğu klasör yolunu buraya yazınız.
 samples: "sample_01.fastq.gz"
+
+# Sonrasında bir tüm genom oluşturmak isterseniz kullanacağınız referans genomun yolunu buraya yazınız.
 reference: "data/monkeypox.fa"
+
+# Tüm genom oluşturulacaksa medaka için model girilmesi gerekiyor.
 medaka_model: "r941_min_high_g303"
+
+# İstenilen minimum coverage değeri
 coverage: 8
+
+# İstenilen minimum kalite değeri
 quality: 10

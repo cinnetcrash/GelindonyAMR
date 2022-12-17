@@ -1,6 +1,7 @@
 
 
 configfile: "config.yaml"
+
 rule all:
     "busco_{sample}/"
 
@@ -26,26 +27,16 @@ rule kraken2_viral:
     shell:
         "kraken2 --db {input.database} {input.trimmed_reads} --report {output.report_kraken2} --classified-out {output.classified_out}"
 
-rule flye:
+rule spades_assembly:
     input:
-        viral_reads="trimmed/{sample}_viral_reads.fastq",
+        "data/sample_{sample}.fastq"
     output:
-        "assembly/{sample}.fasta"
-    params:
-        output_dir="assembly/flye/"
-    conda: srcdir("envs/conda-flye.yaml")
+        "assembly/sample_{sample}/contigs.fasta"
     shell:
-        "flye --nano-corr {input.viral_reads} --out-dir {params.output_dir} --genome-size 0.2m --meta -t 8"
+        "spades.py --pe1-1 {input[0]} --pe1-2 {input[1]} -o {output[0]}"
+
+rule AMR_detection:
+	
 
 
-rule busco:
-    input:
-        baam="data/genome/{sample}.bam"
-    output:
-        "busco_{sample}"
-    params:
-        exit="busco_output/"
-    conda:
-        "envs/conda-porechop.yaml"
-    shell:
-        "busco -i {input.baam} -o {params.exit} --auto-lineage-prok -m genome"
+
