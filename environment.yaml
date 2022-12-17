@@ -1,0 +1,15 @@
+name: Lymra-Ont
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - daler
+  - anaconda
+dependencies:
+  - bioconda::flye=2.9
+  - porechop
+  - homopolish
+  - kraken2
+  - pip
+  - busco
+ 

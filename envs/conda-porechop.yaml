@@ -1,0 +1,12 @@
+name: conda-porechop
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - anaconda
+  - daler
+dependencies:
+  - porechop
+  - samtools
+
+ 

@@ -1,0 +1,40 @@
+name: conda-busco
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - anaconda
+  - artic-network
+dependencies:
+  - busco
+  - tabix
+  - PyVCF
+  - longshot 
+  - bcftools 
+  - bwa 
+  - clint
+  - htslib 
+  - minimap2 
+  - pandas 
+  - pip
+  - pysam
+  - pyfaidx 
+  - requests 
+  - samtools
+  - tqdm
+  - picard
+  - pip:
+    - biopython
+    - PyVCF
+    - argparse
+    - clint
+    - pandas
+    - pysam
+    - pytest
+    - requests
+    - tqdm
+    - git@ghttps://github.com/slowkow/picardmetrics.git
+
+    
+
+    
